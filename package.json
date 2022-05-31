@@ -1,6 +1,6 @@
 {
   "name": "bengali-time",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "This package shows system time in bengali format",
   "main": "dist/BanglaTime.js",
   "types": "dist/BanglaTime.d.ts",
