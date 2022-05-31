@@ -1,6 +1,12 @@
 class BanglaTime {
-    private constructor() { }
     public static banglaTime: BanglaTime;
+
+    public TimeNow : string;
+
+    private constructor() { 
+        this.Now();
+        // this.TimeNow = now().toString();;
+    }
 
     public static getInstance() {
         if (!BanglaTime.banglaTime) {
@@ -14,6 +20,7 @@ class BanglaTime {
             let currentTime = new Date().toLocaleTimeString('en-US'); // 4:18:56 PM
             let bengaliDateTime = this.Convert(currentTime).then((convertedDate)=>{
                 console.log(convertedDate);
+                this.TimeNow = convertedDate.toString();
                 resolve(convertedDate);
             }).catch((err)=>{
                 console.log(err);
@@ -58,9 +65,11 @@ class BanglaTime {
 
 }
 
-const banglaTime = BanglaTime.getInstance();
+const banglaTime = BanglaTime.getInstance().TimeNow;
 const now = async () => {
-    await banglaTime.Now();
+    await BanglaTime.getInstance().Now();
 }
 
+
 export { now };
+export { banglaTime } ;

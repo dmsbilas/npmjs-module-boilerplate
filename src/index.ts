@@ -1,4 +1,4 @@
-import { now } from "./BanglaTime";
+import { banglaTime } from "./BanglaTime";
 
 
-now();
+console.log(banglaTime);
