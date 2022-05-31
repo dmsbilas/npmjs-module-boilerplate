@@ -13,10 +13,12 @@ npm install bengali-time
 ## Usage with Typescript
 
 ```javascript
-import { now } from "./BanglaTime";
+import { now, banglaTime } from "./BanglaTime";
 
 
 now();
+
+console.log(banglaTime);
 
 ```
 
@@ -26,6 +28,11 @@ now();
 const dateTime = require("bengali-time");
 
 dateTime.now();
+
+or 
+
+
+console.log(dateTime.banglaTime);
 
 ```
 

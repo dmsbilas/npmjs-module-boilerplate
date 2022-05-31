@@ -9,9 +9,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.now = void 0;
+exports.banglaTime = exports.now = void 0;
 class BanglaTime {
-    constructor() { }
+    constructor() {
+        this.Now();
+        // this.TimeNow = now().toString();;
+    }
     static getInstance() {
         if (!BanglaTime.banglaTime) {
             BanglaTime.banglaTime = new BanglaTime();
@@ -23,6 +26,7 @@ class BanglaTime {
             let currentTime = new Date().toLocaleTimeString('en-US'); // 4:18:56 PM
             let bengaliDateTime = this.Convert(currentTime).then((convertedDate) => {
                 console.log(convertedDate);
+                this.TimeNow = convertedDate.toString();
                 resolve(convertedDate);
             }).catch((err) => {
                 console.log(err);
@@ -60,9 +64,10 @@ class BanglaTime {
         });
     }
 }
-const banglaTime = BanglaTime.getInstance();
+const banglaTime = BanglaTime.getInstance().TimeNow;
+exports.banglaTime = banglaTime;
 const now = () => __awaiter(void 0, void 0, void 0, function* () {
-    yield banglaTime.Now();
+    yield BanglaTime.getInstance().Now();
 });
 exports.now = now;
 //# sourceMappingURL=BanglaTime.js.map
