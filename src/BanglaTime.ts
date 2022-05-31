@@ -14,8 +14,10 @@ class BanglaTime {
             let currentTime = new Date().toLocaleTimeString('en-US'); // 4:18:56 PM
             let bengaliDateTime = this.Convert(currentTime).then((convertedDate)=>{
                 console.log(convertedDate);
+                resolve(convertedDate);
             }).catch((err)=>{
                 console.log(err);
+                reject(err);
             });
 
         });
