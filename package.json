@@ -1,0 +1,25 @@
+{
+  "name": "bengali-time",
+  "version": "1.0.6",
+  "description": "This package shows system time in bengali format",
+  "main": "dist/BanglaTime.js",
+  "types": "dist/BanglaTime.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "prepublish": "npm run build",
+    "prestart": "npm run build",
+    "start": "./dist/BanglaTime.js"
+  },
+  "keywords": [
+    "bengali",
+    "time",
+    "bangla",
+    "time",
+    "shomoy"
+  ],
+  "author": "Abu Haider Siddiq",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^4.7.2"
+  }
+}
